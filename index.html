@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lain's Book</title>
+  <style>
+    body {
+      display: flex;
+      background-color: black;
+      color: #00ff00;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: #00ff00;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      border: 1px dashed #00ff00;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .nav a {
+      margin: 0 10px;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .sidebar, .main {
+      border: 1px dashed #00ff00;
+      padding: 15px;
+    }
+
+    .sidebar {
+      width: 300px;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    .section {
+      border: 1px solid #00ff00;
+      padding: 10px;
+      margin-top: 15px;
+    }
+
+    .lainn {
+      width: 100%;
+      max-width: 269px;
+      border: 2px solid #000000;
+    }
+
+    .friends img {
+      width: 160px;
+      margin: 10px;
+      border: 1px solid #00ff00;
+    }
+    .lain2 {
+      width: 270px;
+      margin: 0px;
+    }
+    
+  .glow-button {
+    background-color: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    font-family: "Courier New", monospace;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    transition: 0.2s ease-in-out;
+    margin: 60px;
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    background-color: #00ff00;
+    color: black;
+  }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="nav">
+     Lain's Book-Store
+  </div>
+
+  <div class="profile">
+    <div class="sidebar">
+      <h2>Lain's Books</h2>
+      <img src="img/lain.png" class="lainn">
+      <p><strong>Retro Bookstore</strong><br>“Since the 2003s...”</p>
+      <p>Status: <strong>OPEN 24/7</strong></p>
+      <p><a href="#">Browse Books</a> | <a href="#">Special Offers</a></p>
+      <p>Featured Mood:  Nostalgic Reading</p>
+      
+      <div class="section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Add to Wishlist</a></li>
+          <li><a href="#">Request a Book</a></li>
+          <li><a href="#">Join Community</a></li>
+          <li><a href="#">Become a Seller</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <p>Website URL: <br><code>https://Lain's Books.com</code></p>
+      </div>
+      <a href="orderpage.html">
+        <button class="glow-button">Order here!</button>
+      </a>
+      <img src="img/download__15_-removebg-preview.png" alt="">
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <h3>Latest Arrivals</h3>
+        <p><em>New vintage-style editions just added to our collection. Stay tuned!</em></p>
+        <img src="img/lain agn.png" alt="" class="lain2">
+      </div>
+
+      <div class="section">
+        <h3>About Lain's Books</h3>
+        <p><strong>Who We Are:</strong><br>
+          Lain's Books is more than a bookstore — it's a time machine.  
+          Inspired by early 2000s internet culture, we offer a nostalgic experience where each book feels like rediscovering a long-lost gem. Whether you're into classic literature, indie fiction, or retro manga — we've got you covered.
+        </p>
+        <p><strong>Our Mission:</strong><br>
+          To revive the magic of reading through a vintage aesthetic, one book at a time.
+        </p>
+      </div>
+
+      <div class="section friends">
+        <h3>Our Book Partners</h3>
+        <p>Trusted by publishers and readers alike.</p>
+        <div class="ff">
+           <img src="img/1984.JPG" alt="1984" /> <h3>1984---> 1200DA</h3>
+           <img src="img/ارسس.JPG" alt="ارسس الجزء الاول" /> <h3>1100DA <--- ارسس الجزء الاول</h3>
+           <img src="img/48.JPG" alt="كيف تمسك بزمام القوة"> <h3>2600DA <--- كيف تمسك بزمام القوة</h3>
+           <img src="img/المتمرد.JPG" alt="المتمرد"> <h3>900DA <--- المتمرد</h3>
+            <img src="img/عقدك النفسية.jpg" alt="عقدك النفسية"> <h3>1200DA <--- عقدك النفسية</h3>
+            <img src="img/ممتلئ بالفراغ.JPG" alt="ممتلئ بالفراغ."> <h3>1400DA <--- ممتلئ بالفراغ<h3>
+            <img src="img/المعذبون في الارض.JPG" alt="المعذبون في الارض"> <h3>500DA <--- المعذبون في الارض</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

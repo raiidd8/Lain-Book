@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order The book!</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: "Courier New", monospace;
+      padding: 20px;
+    }
+    form {
+      border: 2px dashed #00ff00;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      margin-top: 15px;
+      display: block;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      background-color: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+    }
+    button {
+      margin-top: 20px;
+      background-color: black;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00ff00;
+      color: black;
+    }
+
+    .homee {
+    background-color: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    font-family: "Courier New", monospace;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    transition: 0.2s ease-in-out;
+    }
+
+    .homee:hover {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    background-color: #00ff00;
+    color: black;
+    }
+
+    .send {
+    background-color: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    font-family: "Courier New", monospace;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    transition: 0.2s ease-in-out;
+  }
+
+  .send:hover {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    background-color: #00ff00;
+    color: black;
+  }
+
+  </style>
+</head>
+<body>
+
+  <form id="orderForm">
+    <h2 style="text-align:center;">📚 Order your book! </h2> 
+
+    <label>الاسم:</label>
+    <input type="text" name="first_name" required>
+
+    <label>اللقب:</label>
+    <input type="text" name="last_name" required>
+
+    <label>رقم الهاتف:</label>
+    <input type="tel" name="phone" required>
+
+    <label>الولاية:</label>
+    <input type="text" name="wilaya" required>
+
+    <label>البلدية:</label>
+    <input type="text" name="baladia" required>
+
+    <label>اسم الكتاب:</label>
+    <input type="text" name="book" required>
+
+    <label>طريقة التوصيل:</label>
+    <select name="delivery" required>
+      <option value="إلى باب المنزل">إلى باب المنزل</option>
+      <option value="إلى المكتب">إلى المكتب</option>
+    </select>
+
+    <button type="submit" class="send">إرسال</button>
+  </form>
+
+  <script>
+    const botToken = '7585730282:AAGR8CN4uEP5Qi6gm4v_UN5j5tLp8CPEXyI'; // ← ضع توكن بوتك هنا
+    const chatId = '7888159780'; // ← ضع هنا رقم Chat ID الخاص بك
+
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = {
+        الاسم: formData.get('first_name'),
+        اللقب: formData.get('last_name'),
+        الهاتف: formData.get('phone'),
+        الولاية: formData.get('wilaya'),
+        البلدية: formData.get('baladia'),
+        الكتاب: formData.get('book'),
+        التوصيل: formData.get('delivery')
+      };
+
+      let message = '📚 * Order your book!:*\n\n';
+      for (const key in data) {
+        message += `*${key}:* ${data[key]}\n`;
+      }
+
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'Markdown'
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('✅ Done.');
+          document.getElementById('orderForm').reset();
+        } else {
+          alert('❌ Sending failed');
+        }
+      })
+      .catch(error => {
+        alert('❌ A connection error occurred.');
+        console.error(error);
+      });
+    });
+  </script>
+
+  <a href="index.html">
+    <button class="homee">♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡  Home  ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ </button>
+  </a>
+</body>
+</html>
